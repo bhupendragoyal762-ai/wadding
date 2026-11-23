@@ -1,0 +1,348 @@
+/* ==========================================================================
+   main.css — मुख्य निमंत्रण पृष्ठ की शैली
+   ========================================================================== */
+
+.main-body {
+  position: relative;
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+.main-body .mandala-svg { width: 50vmin; height: 50vmin; opacity: 0.1; }
+
+/* ---------- संगीत बटन ---------- */
+.music-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 30;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--paper);
+  color: var(--maroon);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.music-toggle.muted { opacity: 0.55; }
+
+/* ---------- हीरो ---------- */
+.hero {
+  position: relative;
+  z-index: 2;
+  min-height: 92svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8vh 6vw;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(232,203,134,0.45), transparent 60%),
+    linear-gradient(180deg, #FBE9CE 0%, var(--cream) 100%);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-script);
+  color: var(--gold-deep);
+  margin: 0 0 1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 11vw, 4.4rem);
+  color: var(--maroon);
+  margin: 0;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.4);
+}
+
+.hero-sub {
+  font-family: var(--font-script);
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  margin: 0.6rem 0 0;
+}
+
+.hero-divider { width: 160px; margin: 2rem 0 1.6rem; color: var(--gold); }
+.hero-divider svg { width: 100%; height: auto; display: block; }
+
+.hero-message {
+  max-width: 480px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.scroll-cue {
+  margin-top: 2.6rem;
+  font-family: var(--font-display);
+  color: var(--maroon);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+  font-size: 0.95rem;
+}
+
+/* ---------- सामान्य सेक्शन ---------- */
+.section {
+  position: relative;
+  z-index: 2;
+  padding: 9vh 6vw;
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-eyebrow {
+  font-family: var(--font-script);
+  color: var(--gold-deep);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.04em;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  color: var(--maroon);
+  margin: 0 0 4.5vh;
+}
+
+/* ---------- दोनों जोड़े ---------- */
+.couples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.couple-card {
+  background: var(--paper);
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  padding: 2.4rem 1.6rem;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+.couple-card::before {
+  content: "";
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 90px; height: 90px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.couple-label {
+  font-family: var(--font-display);
+  color: var(--gold-deep);
+  font-size: 1.1rem;
+  margin: 0 0 1.4rem;
+}
+
+.couple-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.couple-person { flex: 1; min-width: 0; }
+.person-role { font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 0.3rem; }
+.person-name { font-family: var(--font-display); font-size: 1.3rem; color: var(--maroon); margin: 0 0 0.4rem; word-break: break-word; }
+.person-parents { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; margin: 0; }
+.couple-and { font-family: var(--font-display); color: var(--gold); font-size: 1.6rem; }
+
+/* ---------- उलटी गिनती ---------- */
+.countdown-section { background: linear-gradient(180deg, transparent, rgba(201,161,90,0.08)); }
+
+.countdown-grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdown-box {
+  background: var(--maroon);
+  color: var(--paper);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  min-width: 76px;
+  box-shadow: var(--shadow-soft);
+}
+.countdown-num { display: block; font-family: var(--font-display); font-size: 1.8rem; }
+.countdown-label { display: block; font-size: 0.72rem; margin-top: 0.2rem; opacity: 0.85; }
+
+.countdown-sub { margin-top: 1.6rem; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---------- कार्यक्रम ---------- */
+.events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  text-align: left;
+}
+
+.event-card {
+  background: var(--paper);
+  border: 1px solid var(--gold);
+  border-left: 4px solid var(--maroon);
+  border-radius: 10px;
+  padding: 1.4rem 1.2rem;
+  box-shadow: var(--shadow-soft);
+}
+.event-name { font-family: var(--font-display); color: var(--maroon); font-size: 1.15rem; margin: 0 0 0.6rem; }
+.event-detail { font-size: 0.88rem; color: var(--ink-soft); margin: 0.2rem 0; display: flex; gap: 0.4rem; }
+.event-detail b { color: var(--ink); font-weight: 600; min-width: 3.4rem; }
+
+/* ---------- गैलरी ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.8rem;
+}
+.gallery-item {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  position: relative;
+  background: var(--cream-deep);
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item .gallery-fallback {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-script);
+  color: var(--gold-deep);
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* ---------- विवाह स्थल ---------- */
+.venue-card {
+  background: var(--paper);
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  padding: 2.4rem 1.8rem;
+  max-width: 460px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-soft);
+}
+.venue-name { font-family: var(--font-display); color: var(--maroon); font-size: 1.3rem; margin: 0 0 0.6rem; }
+.venue-address { color: var(--ink-soft); line-height: 1.7; margin: 0 0 1.4rem; }
+.venue-btn, .whatsapp-btn, .rsvp-submit {
+  display: inline-block;
+  font-family: var(--font-display);
+  color: var(--paper);
+  background: linear-gradient(135deg, var(--maroon), var(--maroon-deep));
+  border: 1px solid var(--gold);
+  padding: 0.75rem 2.1rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- RSVP ---------- */
+.rsvp-form {
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.rsvp-field { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--ink-soft); }
+.rsvp-field input, .rsvp-field select, .rsvp-field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--gold);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+.rsvp-field input:focus, .rsvp-field select:focus, .rsvp-field textarea:focus {
+  outline: 2px solid var(--maroon);
+  outline-offset: 1px;
+}
+.rsvp-submit { border: 1px solid var(--gold); align-self: center; margin-top: 0.4rem; font-size: 1.05rem; }
+.rsvp-note { font-size: 0.76rem; color: var(--ink-soft); text-align: center; line-height: 1.5; margin: 0.4rem 0 0; }
+
+.rsvp-success {
+  display: none;
+  max-width: 440px;
+  margin: 1.6rem auto 0;
+  background: var(--cream-deep);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  padding: 1.2rem;
+  color: var(--maroon);
+  font-family: var(--font-display);
+}
+.rsvp-success.visible { display: block; }
+
+/* ---------- फुटर ---------- */
+.footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 6vh 6vw 8vh;
+}
+.whatsapp-btn { background: linear-gradient(135deg, #2E7D53, #1F5C3B); }
+.footer-line {
+  margin-top: 2.2rem;
+  font-family: var(--font-display);
+  color: var(--gold-deep);
+  font-size: 1.1rem;
+}
+
+/* ---------- लाइटबॉक्स ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 6, 0.92);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.lightbox.visible { opacity: 1; pointer-events: auto; }
+.lightbox-img { max-width: 88vw; max-height: 72vh; border-radius: 8px; box-shadow: var(--shadow-deep); }
+.lightbox-caption { color: var(--cream); font-family: var(--font-script); }
+.lightbox-close {
+  position: absolute; top: 18px; right: 22px;
+  background: none; border: none; color: var(--cream); font-size: 1.6rem;
+}
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); border: 1px solid var(--gold);
+  color: var(--cream); font-size: 1.8rem; width: 44px; height: 44px;
+  border-radius: 50%;
+}
+.lightbox-nav.prev { left: 14px; }
+.lightbox-nav.next { right: 14px; }
+
+/* ---------- स्क्रॉल-रिवील एनिमेशन ---------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 480px) {
+  .section { padding: 7vh 6vw; }
+  .couple-names { flex-direction: column; gap: 1.4rem; }
+  .couple-and { display: none; }
+}

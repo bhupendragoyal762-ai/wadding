@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>शुभ विवाह — निमंत्रण पत्रिका</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="main.css" />
+</head>
+<body class="main-body">
+
+  <div class="mandala-bg" aria-hidden="true">
+    <svg class="mandala-svg mandala-tl" viewBox="0 0 200 200"><use href="#mandalaMotif2"></use></svg>
+    <svg class="mandala-svg mandala-br" viewBox="0 0 200 200"><use href="#mandalaMotif2"></use></svg>
+  </div>
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <g id="mandalaMotif2">
+        <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+        <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+        <g opacity="0.5">
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor"/>
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor" transform="rotate(45 100 100)"/>
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor" transform="rotate(90 100 100)"/>
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor" transform="rotate(135 100 100)"/>
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor" transform="rotate(180 100 100)"/>
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor" transform="rotate(225 100 100)"/>
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor" transform="rotate(270 100 100)"/>
+          <path d="M100 20 C110 45 110 55 100 70 C90 55 90 45 100 20 Z" fill="currentColor" transform="rotate(315 100 100)"/>
+        </g>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- संगीत नियंत्रण -->
+  <button class="music-toggle" id="musicToggle" aria-label="संगीत चालू/बंद करें" data-click-sound>
+    <span id="musicIcon">♪</span>
+  </button>
+
+  <!-- ===================== हीरो ===================== -->
+  <header class="hero">
+    <p class="hero-eyebrow">॥ श्री गणेशाय नमः ॥</p>
+    <h1 class="hero-title">शुभ विवाह</h1>
+    <p class="hero-sub">दो दिल, दो जोड़े, एक नई शुरुआत</p>
+    <div class="hero-divider" aria-hidden="true">
+      <svg viewBox="0 0 200 20"><path d="M0 10 Q50 20 100 10 Q150 0 200 10" fill="none" stroke="var(--gold)" stroke-width="1.4"/></svg>
+    </div>
+    <p class="hero-message" id="heroMessage"></p>
+    <a href="#couples" class="scroll-cue" data-click-sound>निमंत्रण देखें ↓</a>
+  </header>
+
+  <!-- ===================== दोनों जोड़े ===================== -->
+  <section class="section couples-section" id="couples">
+    <p class="section-eyebrow">दोनों जोड़े</p>
+    <h2 class="section-title">हमारा परिवार आपको आमंत्रित करता है</h2>
+
+    <div class="couples-grid">
+      <article class="couple-card">
+        <p class="couple-label" id="c1Label"></p>
+        <div class="couple-names">
+          <div class="couple-person">
+            <p class="person-role">दुल्हन</p>
+            <p class="person-name" id="c1Bride"></p>
+            <p class="person-parents" id="c1BrideParents"></p>
+          </div>
+          <div class="couple-and">&</div>
+          <div class="couple-person">
+            <p class="person-role">दूल्हा</p>
+            <p class="person-name" id="c1Groom"></p>
+            <p class="person-parents" id="c1GroomParents"></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="couple-card">
+        <p class="couple-label" id="c2Label"></p>
+        <div class="couple-names">
+          <div class="couple-person">
+            <p class="person-role">दुल्हन</p>
+            <p class="person-name" id="c2Bride"></p>
+            <p class="person-parents" id="c2BrideParents"></p>
+          </div>
+          <div class="couple-and">&</div>
+          <div class="couple-person">
+            <p class="person-role">दूल्हा</p>
+            <p class="person-name" id="c2Groom"></p>
+            <p class="person-parents" id="c2GroomParents"></p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== उलटी गिनती ===================== -->
+  <section class="section countdown-section">
+    <p class="section-eyebrow">प्रतीक्षा शेष</p>
+    <h2 class="section-title" id="countdownDate"></h2>
+    <div class="countdown-grid" id="countdown">
+      <div class="countdown-box"><span class="countdown-num" id="cdDays">00</span><span class="countdown-label">दिन</span></div>
+      <div class="countdown-box"><span class="countdown-num" id="cdHours">00</span><span class="countdown-label">घंटे</span></div>
+      <div class="countdown-box"><span class="countdown-num" id="cdMins">00</span><span class="countdown-label">मिनट</span></div>
+      <div class="countdown-box"><span class="countdown-num" id="cdSecs">00</span><span class="countdown-label">सेकंड</span></div>
+    </div>
+    <p class="countdown-sub" id="countdownTime"></p>
+  </section>
+
+  <!-- ===================== विवाह समारोह ===================== -->
+  <section class="section events-section" id="events">
+    <p class="section-eyebrow">कार्यक्रम</p>
+    <h2 class="section-title">विवाह समारोह</h2>
+    <div class="events-list" id="eventsList"></div>
+  </section>
+
+  <!-- ===================== स्मृतियाँ (Gallery) ===================== -->
+  <section class="section gallery-section" id="gallery">
+    <p class="section-eyebrow">तस्वीरें</p>
+    <h2 class="section-title">स्मृतियाँ</h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- ===================== विवाह स्थल ===================== -->
+  <section class="section venue-section" id="venue">
+    <p class="section-eyebrow">पता</p>
+    <h2 class="section-title">विवाह स्थल</h2>
+    <div class="venue-card">
+      <p class="venue-name" id="venueName"></p>
+      <p class="venue-address" id="venueAddress"></p>
+      <a href="#" id="mapsLink" target="_blank" rel="noopener" class="venue-btn" data-click-sound>स्थान देखें</a>
+    </div>
+  </section>
+
+  <!-- ===================== RSVP ===================== -->
+  <section class="section rsvp-section" id="rsvp">
+    <p class="section-eyebrow">पुष्टि करें</p>
+    <h2 class="section-title">अपनी उपस्थिति दर्ज करें</h2>
+
+    <form class="rsvp-form" id="rsvpForm">
+      <label class="rsvp-field">
+        <span>नाम</span>
+        <input type="text" id="rsvpName" required placeholder="आपका नाम" />
+      </label>
+      <label class="rsvp-field">
+        <span>कितने अतिथि</span>
+        <input type="number" id="rsvpGuests" min="1" max="20" value="1" required />
+      </label>
+      <label class="rsvp-field">
+        <span>उपस्थिति</span>
+        <select id="rsvpAttending">
+          <option value="yes">मैं अवश्य उपस्थित रहूँगा/रहूँगी</option>
+          <option value="no">क्षमा करें, मैं नहीं आ पाऊँगा/पाऊँगी</option>
+        </select>
+      </label>
+      <label class="rsvp-field">
+        <span>संदेश</span>
+        <textarea id="rsvpMessage" rows="3" placeholder="नवविवाहित जोड़ों के लिए शुभकामना संदेश"></textarea>
+      </label>
+      <button type="submit" class="rsvp-submit" data-click-sound>पुष्टि भेजें</button>
+      <p class="rsvp-note">नोट: यह फ़ॉर्म फिलहाल केवल इस डिवाइस पर उपस्थिति दर्शाता है। उत्तर सुरक्षित रूप से सहेजने हेतु भविष्य में डेटाबेस (जैसे Firebase) जोड़ा जा सकता है।</p>
+    </form>
+
+    <div class="rsvp-success" id="rsvpSuccess" role="status">
+      <p>धन्यवाद, <span id="rsvpSuccessName"></span> जी! आपकी प्रतिक्रिया प्राप्त हो गई है। 🌸</p>
+    </div>
+  </section>
+
+  <!-- ===================== संपर्क / फुटर ===================== -->
+  <footer class="footer">
+    <a class="whatsapp-btn" id="whatsappLink" target="_blank" rel="noopener" data-click-sound>
+      व्हाट्सऐप पर संपर्क करें
+    </a>
+    <p class="footer-line">॥ शुभ विवाह ॥</p>
+  </footer>
+
+  <!-- गैलरी लाइटबॉक्स -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="बंद करें">✕</button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="पिछली तस्वीर">‹</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="अगली तस्वीर">›</button>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
